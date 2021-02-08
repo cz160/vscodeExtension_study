@@ -1,6 +1,7 @@
 {
-  "name": "app",
-  "displayName": "app",
+  "name": "cz-vscode-demo",
+  "publisher": "竹合",
+  "displayName": "cz-vscode-demo",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -19,7 +20,24 @@
         "command": "app.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "keybindings": [
+      {
+        "command": "app.helloWorld",
+        "key": "ctrl+f10",
+        "mac": "cmd+f10",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorTextFocus",
+          "command": "app.helloWorld",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
